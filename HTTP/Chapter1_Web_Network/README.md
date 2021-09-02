@@ -10,7 +10,7 @@
 
 <br>
 
-### 프로토콜의 집합
+### **프로토콜의 집합**
 
 ---
 
@@ -26,7 +26,7 @@ TCP/IP는 이러한 인터넷과 관련된 프로토콜들을 모은 것이다.
 
 <br>
 
-### 계층(Layer)
+### **계층(Layer)**
 
 ---
 
@@ -47,7 +47,7 @@ TCP/IP는 이러한 인터넷과 관련된 프로토콜들을 모은 것이다.
 
 <br>
 
-### TCP/IP 통신 흐름
+### **TCP/IP 통신 흐름**
 
 ![TCP/IP 흐름](../images/communication_flow.png)
 
@@ -55,7 +55,7 @@ TCP/IP는 이러한 인터넷과 관련된 프로토콜들을 모은 것이다.
 
 ## **IP/TCP/DNS**
 
-### IP(Internet Protocol)
+### **IP(Internet Protocol)**
 
 - 전송 담당
 - 네트워크 계층에 해당한다.
@@ -67,7 +67,7 @@ TCP/IP는 이러한 인터넷과 관련된 프로토콜들을 모은 것이다.
 
 <br>
 
-### TCP(Transmission Control Protocol)
+### **TCP(Transmission Control Protocol)**
 
 - 신뢰성 담당
 - 전송 계층에 해당한다.
@@ -83,7 +83,7 @@ TCP/IP는 이러한 인터넷과 관련된 프로토콜들을 모은 것이다.
 
 <br>
 
-### DNS(Domain Name System)
+### **DNS(Domain Name System)**
 
 - 응용 계층 시스템에서 도메인 이름과 IP 주소 이름 확인을 제공한다.
 - 도메인명에서 IP 주소를 조사할 수 있다.
@@ -91,7 +91,7 @@ TCP/IP는 이러한 인터넷과 관련된 프로토콜들을 모은 것이다.
 
 <br>
 
-## URI와 URL
+## **URI와 URL**
 
 ### **URI**
 
