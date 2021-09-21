@@ -4,7 +4,7 @@ Operating System
 
 1. [운영체제 개요](./Chapter1_OS_Summary/README.md)
 
-2. 컴퓨터 시스템의 구조
+2. [컴퓨터 시스템의 구조](./Chapter2_Computer_Architecture/README.md)
 
 3. 프로세스 관리
 
