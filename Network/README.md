@@ -6,7 +6,7 @@
 
 1. [네트워크 첫걸음](./Chapter1_Network/README.md)
 
-2. 네트워크의 기본 규칙
+2. [네트워크의 기본 규칙](./Chapter2_Rule/README.md)
 
 3. 물리 계층: 데이터를 전기 신호로 변환하기
 
