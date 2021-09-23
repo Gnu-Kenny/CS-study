@@ -6,7 +6,7 @@
 
 1. [웹과 네트워크의 기본에 대해 알아보자](./Chapter1_Web_Network/README.md)
 
-2. 간단한 프로토콜 HTTP
+2. [간단한 프로토콜 HTTP](./Chapter2_Http_Protocol/README.md)
 
 3. HTTP 정보는 HTTP 메시지에 있다.
 
