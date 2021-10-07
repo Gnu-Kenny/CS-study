@@ -6,9 +6,9 @@ Operating System
 
 2. [컴퓨터 시스템의 구조](./Chapter2_Computer_Architecture/README.md)
 
-3. 프로세스 관리
+3. [프로세스 관리](./Chapter3_OS_Process/README.md)
 
-4. CPU 스케줄링
+4. [CPU 스케줄링](./Chapter4_Process_Management/README.md)
 
 5. 병행 제어
 
