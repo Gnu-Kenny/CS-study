@@ -86,13 +86,15 @@ int main()
 ## exec() 시스템 콜
 
 ```c
-int main()
+int main(){
     printf("\n Hello");
     execlp("/bin/date", "/bin/date", (char *)0);
     printf("\n Hello");
     // 새로운 프로그램으로 덮어씌우는 함수
     // 경로 포함 프로그램 이름, 프로그램에 전달할 argument, 0 포인터 로 구성
     // 프로그램을 덮어 씌우기 때문에 밑 코드들은 수행되지 않음
+}
+
 ```
 
 ## wait() 시스템 콜
