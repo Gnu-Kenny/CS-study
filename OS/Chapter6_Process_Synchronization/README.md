@@ -174,7 +174,11 @@ do{
 
 ## ✅ Semaphores
 
-- 앞의 방식들을 추상화시킴
+- Synchronize를 추상화
+
+- 추상 자료형
+
+  - 앞의 방식들을 추상화시킴
 
 - Semaphore S (S -> 자원의 수)
 
@@ -182,16 +186,93 @@ do{
 
   - 아래의 두 가지 atomic 연산에 의해서만 접근 가능
 
-  P연산 (자원 획득 과정)
+  P연산 (공유 데이터 획득 과정)
 
   ```c
   P(S): while(S < 0) do no-op;
         S--;
   ```
 
-  V연산 (자원 반납 과정)
+  V연산 (공유 데이터 반납 과정)
 
   ```c
   V(S):
         S++;
   ```
+
+## Two Types of Semaphores
+
+- Counting semaphore
+
+  - 도메인이 0 이상인 임의의 정수값
+
+  - 주로 resource counting에 사용
+
+- Binary semaphore (=mutex)
+
+  - 0 또는 1 값만 가질 수 있는 semaphore
+
+  - 주로 mutual exclusion (lock/unlock)에 사용
+
+## Deadlock and Starvation
+
+- Deadlock
+
+  - 둘 이상의 프로세스가 서로 상대방에 의해 충족될 수 있는 event를 무한히 기다리는 현상
+
+- Starvation
+  - `indefinite blocking.` 프로세스가 suspend된 이유에 해당하는 세마포어 큐에서 빠져나갈 수 없는 현상
+
+## Classical Problems of Synchronization
+
+### Bounded-Buffer Problem(Producer-Consumer Problem)
+
+- Buffer
+  - 공유 데이터 보관
+- Producer
+  - empty 버퍼 생길 때가지 대기
+  - 공유 데이터에 lock을 검
+  - 공유 데이터를 버퍼에 입력 및 buffer 조작
+  - lock 해제
+  - Full buffer 하나 증가
+- Consumer
+
+  - full 버퍼 생길 때가지 대기
+  - 공유 데이터에 lock을 검
+  - 공유 데이터를 버퍼에 입력 및 buffer 조작
+  - lock 해제
+  - empty buffer 하나 증가
+
+- Shared data
+
+  - buffer 자체 및 buffer 조작 변수(empty/full buffer의 시작 위치)
+
+- Synchronization variables
+
+  - mutual exclusion -> Need binary semaphore
+
+  - resource count -> Need integer semaphore
+
+## Monitor
+
+- Semaphore의 문제점
+
+  - 코딩하기 힘들다
+  - 정확성 (correctness)의 입증이 어렵다.
+  - 자발적 협력(vluntary cooperation)이 필요하다.
+  - 한번의 실수가 모든 시스템에 치명적 영향
+
+- 동시 수행중인 프로세스 사이에서 abstract data type의 안전한 공유를 보장하기 위한  
+  high-level synchronization construct
+
+- 모니터 내에서는 한번에 하나의 프로세스만이 활동 가능
+- 프로그래머가 동기화 제약 조건을 명시적으로 코딩할 필요없음
+- 프로세스가 모니터 안에서 기다릴 수 있도록 하기 위해 condition variable 사용  
+  `contidion x, y;`
+- Condition variable은 wait와 signal 연산에 의해서만 접근 가능  
+  `x.wait(); //자원의 여부가 없을 때 대기`  
+  x.wait()을 invoke한 프로세스는 다른 프로세스가 x.signal()을 invoke하기 전까지 suspend된다.  
+  `x.signal(); //`  
+  x.signal()은 정확하게 하나의 suspend된 프로세스를 resume한다.  
+  Suspend된 프로세스가 없으면 아무 일도 일어나지 않는다.
+
