@@ -6,9 +6,9 @@
 
 1. [데이터베이스와 SQL](./Chapter1_DB_SQL/README.md)
 
-2. 테이블에서 데이터 검색
+2. [테이블에서 데이터 검색](./Chapter2_SELECT/README.md)
 
-3. 정렬과 연산
+3. [정렬과 연산](./Chapter3_ORDER_BY/README.md)
 
 4. 데이터의 추가, 삭제, 갱신
 
