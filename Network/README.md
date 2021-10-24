@@ -16,7 +16,7 @@
 
 6. [전송 계층: 신뢰할 수 있는 데이터 전송하기](./Chapter6_Transfer_layer/README.md)
 
-7. 응용 계층: 애플리케이션에 데이터 전송하기
+7. [응용 계층: 애플리케이션에 데이터 전송하기](./Chapter7_Application_layer/README.md)
 
 8. 네트워크의 전체 흐름 살펴보기
 
