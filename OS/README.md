@@ -10,11 +10,11 @@ Operating System
 
 4. [CPU 스케줄링](./Chapter4_Process_Management/README.md)
 
-5. 병행 제어
+5. [병행 제어](./Chapter5/README.md)
 
-6. 병행 제어(2)
+6. [병행 제어(2)](./Chapter6_Process_Synchronization/README.md)
 
-7. 데드락
+7. [데드락](./Chapter7_Deadlock/README.md)
 
 8. 메모리 관리(1,2)
 
