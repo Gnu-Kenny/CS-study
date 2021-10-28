@@ -8,9 +8,13 @@
 
 - Execution(연산 공간) -> CPU Process
 
+<br>
+
 ## Race Condition
 
 - S-box(Storage)를 공유하는 E-box(Execution)가 여럿 있는 경우 Race Condition 가능성 있음.
+
+<br>
 
 ## OS에서 race condition 발생 원인
 
@@ -25,6 +29,8 @@
 - 커널 모드 running 중 인터럽트 발생하여 인터러브 처리 루틴이 수행  
   -> 양쪽 다 커널 코드이므로 kernel address space 공유
 
+<br>
+
 ### kernel mode
 
 - user mode와 달리 kernel mode 사용시 주소 공간을 공유한다.
@@ -34,6 +40,8 @@
 - 해결책
   - 커널 모드에서 수행 중일 때는 CPU를 preempt하지 않음
   - 커널 모드에서 사용자 모드로 돌아갈 때 preempt
+
+<br>
 
 ### multiprocessor
 
@@ -45,6 +53,8 @@
 - 운영체제 전체를 lock -> 비효율적
 
 (방법 2) 커널 내부에 있는 각 공유 데이터에 접근할 떄마다 그 데이터에 대한 lock/ unlock을 하는 방법
+
+<br>
 
 ## Process Synchronization 문제
 
@@ -60,6 +70,8 @@
 
 - race condition을 막기 위해서는 concurrent process는 동기화(synchronize)되어야 한다.
 
+<br>
+
 ## The Critical-Section Problem
 
 - n개의 프로세스가 공유 데이터를 동시에 사용하기를 원하는 경우
@@ -68,6 +80,8 @@
 
 - problem
   - 하나의 프로세스가 critical section에 있을 때 다른 모든 프로세스는 critical section에 들어갈 수 없어야 한다.
+
+<br>
 
 ## Initial Attempts to Solve Problem
 
@@ -87,6 +101,8 @@ do{
 
 - 프로세스들은 수행의 동기화(synchronize)를 위해 몇몇 변수를 공유할 수 있다. -> synchronization variable
 
+<br>
+
 ## The Critical-Section Problem
 
 - n 개의 프로세스가 공유 데이털르 동시에 사용하기를 원하는 경우
@@ -95,6 +111,8 @@ do{
 
 - problem
   - 하나의 프로세스가 critical section에 있을 때 다른 모든 프로세스는 critical section에 들어갈 수 없어야 한다.
+
+<br>
 
 ## Algorithm 1
 
@@ -117,6 +135,8 @@ do{
   } while(1);
   ```
 
+<br>
+
 ## 프로그램적 해결법의 충족 조건
 
 Mutual Exclusion (상호 배제)
@@ -132,6 +152,8 @@ Bounded Waiting (유한대기)
 - 기다리는 시간이 유한해야한다.
 
 - starvation을 막아야한다. - 특정 프로세스가 영원이 자원을 사용할 수 없는 문제
+
+<br>
 
 ## Algorithm 2
 
@@ -157,6 +179,8 @@ do{
 
 - 둘다 2행까지 수행 후 끊임 없이 양보하는 상황 발생 가능
 
+<br>
+
 ## Algorithm 3 (Peterson's Algorithm)
 
 ```c
@@ -171,6 +195,8 @@ do{
 ```
 
 - Busy Waiting = Spin lock! (계속 CPU와 memory를 쓰면서 wait)
+
+<br>
 
 ## ✅ Semaphores
 
@@ -200,6 +226,8 @@ do{
         S++;
   ```
 
+<br>
+
 ## Two Types of Semaphores
 
 - Counting semaphore
@@ -214,6 +242,8 @@ do{
 
   - 주로 mutual exclusion (lock/unlock)에 사용
 
+<br>
+
 ## Deadlock and Starvation
 
 - Deadlock
@@ -222,6 +252,8 @@ do{
 
 - Starvation
   - `indefinite blocking.` 프로세스가 suspend된 이유에 해당하는 세마포어 큐에서 빠져나갈 수 없는 현상
+
+<br>
 
 ## Classical Problems of Synchronization
 
@@ -253,6 +285,8 @@ do{
 
   - resource count -> Need integer semaphore
 
+<br>
+
 ## Monitor
 
 - Semaphore의 문제점
@@ -275,4 +309,3 @@ do{
   `x.signal(); //`  
   x.signal()은 정확하게 하나의 suspend된 프로세스를 resume한다.  
   Suspend된 프로세스가 없으면 아무 일도 일어나지 않는다.
-
