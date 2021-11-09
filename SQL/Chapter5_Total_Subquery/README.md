@@ -26,6 +26,8 @@ SELECT COUNT(*) FROM sample51;
 
 - **즉, COUNT 집계함수로 행 개수를 구할 수 있다.**
 
+<br>
+
 ### WHERE 구 지정
 
 ```sql
@@ -37,6 +39,8 @@ SELECT COUNT(*) FROM sample51 WHERE name='A';
 - 따라서 WHERE구로 조건을 지정하면 테이블 전체가 아닌, 검색된 행이 COUNT로 넘겨진다.
 
 - 즉, WHERE 구의 조건에 맞는 행의 개수를 반환한다.
+
+<br>
 
 ## 2. 집계함수와 NULL 값
 
@@ -54,6 +58,8 @@ SELECT COUNT(no), COUNT(name) FROM sample51;
 
 - 집계 함수는 집합 안에 NULL 값이 있을 경우 무시한다.
 
+<br>
+
 ## 3. DISTINCT로 중복 제거
 
 ```sql
@@ -66,6 +72,8 @@ SELECT DISTINCT name FROM sample51;
 
 - ALL, DISTINCT 중 어느것도 지정하지 않은 경우 중복된 값은 제거되지 않는다. 즉, 생략한 경우 ALL 로 간주한다.
 
+<br>
+
 ## 4. 집계함수에서 DISTINCT
 
 ```sql
@@ -75,6 +83,8 @@ SELECT COUNT(ALL name), COUNT(DISTINCT name) FROM sample51;
 - 집계함수의 인수로 DISTINCT를 사용한 수식을 지정할 수 있다.
 
 - 위의 식에서는 name열에서 NULL 값을 제외하고, 중복하지 않는 데이터의 개수를 반환한다.
+
+<br>
 
 # 21강 COUNT 이외의 집계 함수
 
@@ -88,6 +98,8 @@ SELECT SUM(quantity) FROM sample51;
 - SUM 집계함수에 지정되는 집합은 수치형 뿐이다.
 - 문자열형이나 날짜시간형의 집합에서 합계를 구할 수는 없다.
 - SUM 집계함수도 마찬가지로 NULL 값을 무시한다. 따라서 NULL 값을 제거한 뒤에 합계를 낸다.
+
+<br>
 
 ## 2. AVG로 평균내기
 
@@ -107,6 +119,8 @@ SELECT AVG(quantity), SUM(quantity)/COUNT(quantity) FROM sample51;
   SELECT AVG(CASE WHEN quantity IS NULL THEN 0 ELSE quantity END) AS avgnull0 FROM sample51;
   ```
 
+<br>
+
 ## 3. MIN, MAX로 최솟값, 최댓값 구하기
 
 ```sql
@@ -118,6 +132,8 @@ SELECT MIN(quantity), MAX(quantity), MIN(name), MAX(name) FROM sample51;
 - 문자열형과 날짜시간형에도 사용할 수 있다.
 
 - NULL 값은 무시한다.
+
+<br>
 
 # 22강 그룹화 - GROUP BY
 
@@ -150,6 +166,8 @@ SELECT name, COUNT(name), SUM(quantity) FROM sample51 GROUP BY name;
 - 점포별, 상품별, 월별, 일별 등 특정 단위로 집계할 때 GROUP BY를 자주 사용한다.
 - 매출 실적을 조사하는 동시에 SUM 집계함수로 합계를 낼 수 있으며, COUNT로 건수를 집계하기도 한다.
 
+<br>
+
 ## 2. HAVING 구로 조건 지정
 
 ```sql
@@ -174,6 +192,8 @@ SELECT name, COUNT(name) FROM sample51 GROUP BY name HAVING COUNT(name)=1;
 
 **WHERE → GROUP BY → HAVING → SELECT → ORDER BY**
 
+<br>
+
 ## 3. 복수열의 그룹화
 
 ```sql
@@ -187,6 +207,8 @@ SELECT MIN(no), name, SUM(quantity) FROM sample51 GROUP BY name;
 - 이 때 집계함수를 사용하면 집합은 하나의 값을 계산되므로, 그룹마다 하나의 행을 출력할 수 있다.
 
 - GROUP BY에서 지정한 열 이외의 열은 집계함수를 사용하지 않은 채 SELECT 구에 지정할 수 없다.
+
+<br>
 
 ## 4. 결괏값 정렬
 
