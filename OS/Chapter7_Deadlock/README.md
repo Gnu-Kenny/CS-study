@@ -22,6 +22,8 @@
       P(B);    P(A);
       ```
 
+<br>
+
 ## Deadlock 발생의 4가지 조건
 
 - Mutual exclusion(상호 배제)
@@ -44,6 +46,8 @@
     3. Pn-1은 Pn이 가진 자원을 기다림
     4. Pn은 P0가 가진 자원을 기다림
 
+<br>
+
 ## Deadlock의 처리 방법
 
 - **Deadlock Prevention**
@@ -62,6 +66,8 @@
 - **Deadlock Ignorance**
   - Deadlock을 시스템이 책임지지 않음
   - UNIX를 포함한 대부분의 OS가 채택
+
+<br>
 
 ## Deadlock Prevention
 
@@ -87,6 +93,8 @@
 
 -> Utilization 저하, throughput 감소, starvation 문제
 
+<br>
+
 ## Deadlock Avoidance
 
 - 시스템이 safe state에 있으면  
@@ -107,9 +115,13 @@
   - `multiple instances` per resource types
     - `Banker's Algorithm 사용`
 
+<br>
+
 ### _safe state_
 
 - 시스템 내의 프로세스들에 대한 `safe sequence`가 존재하는 상태
+
+<br>
 
 ### _safe sequence_
 
@@ -120,6 +132,8 @@
   - Pi의 자원 요청이 즉시 충족될 수 없으면 모든 Pj(j < i)가 종료될 때까지 기다린다.
 
   - Pi-1이 종료되면 Pi의 자원 요청을 만족시켜 수행한다.
+
+<br>
 
 ## Deadlock Detection and Recovery
 
@@ -157,6 +171,8 @@
   - Starvation 문제
     - 동일한 프로세스가 계속해서 victim으로 선정되는 경우
     - cost factor에 rollback 횟수도 같이 고려
+
+<br>
 
 ## Deadlock Ignoreance
 
