@@ -18,6 +18,6 @@
 
 7. [응용 계층: 애플리케이션에 데이터 전송하기](./Chapter7_Application_layer/README.md)
 
-8. 네트워크의 전체 흐름 살펴보기
+8. [네트워크의 전체 흐름 살펴보기](./Chapter8_Network_Flow/README.md)
 
-9. 무선 랜 이해하기
+9. [무선 랜 이해하기](./Chapter9_Wireless_LAN/README.md)
