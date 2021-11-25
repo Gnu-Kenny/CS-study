@@ -16,7 +16,7 @@
 
 6. [HTTP 헤더](./Chapter6_HTTP_HEader/README.md)
 
-7. 웹을 안정하게 하는 HTTPS
+7. [웹을 안정하게 하는 HTTPS](./Chapter7_HTTPS/README.md)
 
 8. 누가 액세스하고 있는지를 확인하는 인증
 
