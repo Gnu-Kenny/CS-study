@@ -23,6 +23,8 @@
 - 조건에 일치하는 행만 SELECT 한다.
   - 비교 연산자 'AND'와 'OR'이 자주 사용된다.
 
+<br>
+
 ### SQL의 기초적인 기술 규칙
 
 - SQL 문의 마지막에 딜리미터(Delimiter)(문장의 단락을 의미)를 붙인다.
@@ -35,6 +37,8 @@
 
 단어는 반각 스페이스나 개행으로 구별한다. 전각 스페이스는 사용하지 않는다.
 
+<br>
+
 ### DISTINCT에 의한 중복 배제
 
 - 선택한 행에서 중복된 값이 있고 이를 없애고 싶은 경우에는 'DISTINCT' 키워드를 지정한다.
@@ -42,6 +46,8 @@
   ```sql
   SELECT distinct district FROM city WHERE countrycode = 'kor';
   ```
+
+<br>
 
 # 7강 SELECT문 응용
 
@@ -58,10 +64,14 @@
   SELECT ~ ORDER BY 열1[, 열2, ...] desc;
   ```
 
+<br>
+
 ## 정렬시 주의할 점
 
 - 행의 정렬키를 한 가지 의미(Unique)로 정해야 한다.
   - 컬럼의 값이 복수개 존재한다면 순서가 일정하지 않을 수 있다.
+
+<br>
 
 ## 테이블 요약하는 함수
 
@@ -87,6 +97,8 @@
 
 - 집약함수는 기본적으로 NULL을 제외하고 집계하는데, COUNT (\*)로 표기하여 NULL을 포함한 전체 행을 집계
 
+<br>
+d
 ## 데이터를 그룹으로 나누는 GROUP BY
 
 - 대상이 되는 데이터를 몇 개의 그룹으로 나눠서 집약하는 것도 가능
@@ -97,7 +109,11 @@
   SELECT - FROM 테이블명 GROUP BY 열명1 [, 열명2, ...];
   ```
 
+<br>
+
 ## 나눈 그룹에 조건 추가
+
+<br>
 
 ## 집약한 결과에 조건 지정
 
@@ -124,6 +140,8 @@ UPDATE 테이블명 SET 열명 = 값 WHERE 조건;
 - ```sql
   update city set name = 'siheung', population = 429390 where countrycode = 'KOR' and district = 'Kyonggi' and name= 'Shihung';​
   ```
+
+<br>
 
 ### 데이터 입력하는 INSERT문
 
@@ -172,6 +190,8 @@ DELETE FROM 테이블명 WHERE 조건;
 - WHERE로 지정한 조건에 맞는 항목을 제거한다.
 - 1행을 대상으로 제거하려면 WHERE 구문의 대상을 유니크하게 특정해야한다.
 
+<br>
+
 # 9강 뷰 작성, 복수 테이블에서 선택
 
 ## 뷰 작성과 서브쿼리 및 결합
@@ -186,6 +206,8 @@ DELETE FROM 테이블명 WHERE 조건;
 
   - 데이터 저장 없이 실현할 수 있고, 뷰를 제거해도 참조하는 테이블은 영향을 받지 않는다.
 
+<br>
+
 ## 뷰 작성 CREATE문
 
 ```sql
@@ -193,6 +215,8 @@ CREATE VIEW 뷰 명(열명1[, 열명2,...]) AS SELECT문;
 ```
 
 - SELECT문에서 열 전체를 지정했을 경우 뷰명 뒤의 괄호와 열 리스트는 생략할 수 있다.
+
+<br>
 
 ## 결합 (JOIN)
 
@@ -213,6 +237,8 @@ CREATE VIEW 뷰 명(열명1[, 열명2,...]) AS SELECT문;
 ```sql
 SELECT 선택하고 싶은 열 리스트 FROM 첫 번째 테이블명 INNER JOIN 두 번째 테이블명 ON 결합조건;
 ```
+
+<br>
 
 ### Outer JOIN (외부 결합)
 
