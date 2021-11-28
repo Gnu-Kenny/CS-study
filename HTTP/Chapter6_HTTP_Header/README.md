@@ -8,9 +8,13 @@
 
 - 메소드, URI, HTTP 버전, HTTP 헤더 필드 등으로 구성되어 있다.
 
+<br>
+
 ### 리스폰스의 HTTP 메시지
 
 - HTTP 메시지와 HTTP 버전, 상태 코드(코드와 설명), HTTP 헤더 필드 등으로 구성
+
+<br>
 
 ## 6.2 헤더 필드
 
@@ -19,6 +23,8 @@
 - 부가적으로 중요한 정보를 전달하는 역할을 담당하고 있다.
 
 - 메시지 바디의 크기나 사용하고 있는 언어, 인증 정보 등을 브라우저나 서버에 제공하기 위해 사용되고 있다.
+
+<br>
 
 ### 6.2.2 HTTP 헤더 필드의 구조
 
@@ -33,6 +39,8 @@
 
 - 하나의 HTTP 헤더 필드가 여러 개의 필드 값을 가질 수 있다.  
    `Keep-Alive:timeout=15, max=100`
+
+<br>
 
 ### 6.2.3 4종류의 HTTP 헤더 필드
 
@@ -51,11 +59,17 @@
 - 엔티티 헤더 필드(Entity Header Fields)
   - 리퀘스트, 리스폰스 메시지에 포함된 엔티티에 사용되는 헤더로 콘텐츠 갱신 시간 등의 엔티티에 관한 정보를 부가한다.
 
+<br>
+
 ### 6.2.4 HTTP/1.1 헤더 필드 일람
 
 - 헤드 필드에는 47 종류가 있다.
 
+<br>
+
 ### 6.2.5 HTTP/1.1 이외의 헤더 필드
+
+<br>
 
 ### 6.2.6 End-to-end 헤더와 Hop-by-hop 헤더
 
@@ -88,6 +102,8 @@
   - **Transfer-Encoding**
 
   - **Upgrade**
+
+<br>
 
 ## 6.3 HTTP/1.1 일반 헤더 필드
 
@@ -132,6 +148,8 @@
   | s-maxage = [초]  |   필수    |               공유 캐시 서버의 리스폰스 최대 Age 값                |
   | cache-exgtension |     -     |                    새로운 디렉티브를 위한 토큰                     |
 
+<br>
+
 ### 캐시가 가능한지 여부를 나타내는 디렉티브
 
 ---
@@ -158,6 +176,8 @@
 - `Cache-Control: no-cache=Location`  
   지정된 헤더 필드 이외에는 캐시하는 것이 가능하다.
 
+<br>
+
 ### 캐시로 보존 가능한 것을 제어하는 디렉티브
 
 **no-store 디렉티브**
@@ -165,6 +185,8 @@
 - `Cache-Control: no-store`
 
 request 혹은 response에 기밀 정보가 포함되어 있음을 나타낸다.
+
+<br>
 
 ### 캐시 기한이나 검증을 지정하는 디렉티브
 
@@ -229,6 +251,8 @@ max-age와 기능이 동일하나 이는 여러 유저가 이용 할 수 있는 
   - 리퀘스트와 리스폰스의 어느 쪽에 있어서도 캐시가 엔티티 바디의 미디어 타입을 변경하지 않도록 지정한다.
   - 캐시 서버 등에 의해서 이미지가 압축되는 것을 방지한다.
 
+<br>
+
 ### Cache-Control 확장
 
 **cache-extension 토큰**
@@ -269,6 +293,8 @@ max-age와 기능이 동일하나 이는 여러 유저가 이용 할 수 있는 
 
 - HTTP/1.1 이전 버전의 HTTP에 경우, 지속적 접속이 디폴트가 아니었다. 이러한 경우 지속적 접속을 위해선 Keep-Alive라고 지정을 해야한다.
 
+<br>
+
 ### 6.3.3 Date
 
 - HTTP 메시지를 생성한 날짜를 나타낸다.
@@ -278,6 +304,8 @@ max-age와 기능이 동일하나 이는 여러 유저가 이용 할 수 있는 
 - `Date: Tue, 03-Jul-2012 04:40:59 GMT`
   - 오래된 버전의 HTTP에 경우 RFC850에 정의된 다음과 같은 포맷을 사용한다.
 
+<br>
+
 ### 6.3.4 Pragma
 
 - `Pragma: no-cache`
@@ -285,6 +313,8 @@ max-age와 기능이 동일하나 이는 여러 유저가 이용 할 수 있는 
   - 일반 헤더 필드지만 클라이언트 리퀘스트에서만 사용한다.
 
   - 클라이언트는 캐시된 리소스의 리스폰스를 원하지 않음을 모든 중간 서버에 알리기 위해 사용한다.
+
+<br>
 
 ### 6.3.5 Trailer
 
@@ -298,6 +328,8 @@ max-age와 기능이 동일하나 이는 여러 유저가 이용 할 수 있는 
 Expires: Tue, 28 Sep 2004 23:59:59 GMT
 ```
 
+<br>
+
 ### 6.3.6 Transfer-Encoding
 
 - 메시지 바디의 전송 코딩 형식을 지원하는 경우 사용하게 됨
@@ -310,6 +342,8 @@ Expires: Tue, 28 Sep 2004 23:59:59 GMT
 
 - 3,312 bytes 912 bytes 청크 데이터로 분할되어 있는 것을 알 수 있음
 
+<br>
+
 ### 6.3.7 Upgrade
 
 - HTTP 및 다른 프로토콜의 새로운 버전이 통신에 이용되는 경우에 사용한다
@@ -317,6 +351,8 @@ Expires: Tue, 28 Sep 2004 23:59:59 GMT
 - 지정 대상이 전혀 다른 통신 프로토콜이라고 해도 문제 없다.
 
 - `양쪽 모두 Connection 헤더 필드가 지정되어있다.`
+
+<br>
 
 ### 6.3.8 Via
 
@@ -327,6 +363,8 @@ Expires: Tue, 28 Sep 2004 23:59:59 GMT
 - 이것은 traceroute와 메일의 Received 헤더의 기능과 유사하다.
 
 - 전송된 메시지 추적과 리퀘스트 루프의 회피 등에 사용되기 때문에 `프록시 경유시 반드시 부가한다.`
+
+<br>
 
 ### 6.3.9 Warning
 
@@ -349,6 +387,8 @@ Expires: Tue, 28 Sep 2004 23:59:59 GMT
 | 199  | Miscellaneous warning            | 임의의 경고문                                                                           |
 | 214  | Transformation applied           | 프록시가 인코딩과 미디어 타입 등에 대응해서 <br/> 무언가의 처리를 한 경우               |
 | 299  | Miscellaneous persistent warning | 임의의 경고문                                                                           |
+
+<br>
 
 ## 6.4 리퀘스트 헤더 필드
 
@@ -379,6 +419,8 @@ Expires: Tue, 28 Sep 2004 23:59:59 GMT
 - 애플리케이션용 바이너리 파일
   - application/octet-stream, application/zip ...
 
+<br>
+
 ### 6.4.2 Accept-Charset
 
 `Accept-Charset:iso-8859-5, unicode-1-1:q+0.8`
@@ -390,6 +432,8 @@ Expires: Tue, 28 Sep 2004 23:59:59 GMT
 - 품질 지수에 의해 상대적으로 우선 순위를 표시한다. (Accept와 동일)
 
 - 서버 구동형 네고시에이션에 이용한다.
+
+<br>
 
 ### 6.4.3 Accept-Encoding
 
@@ -412,6 +456,8 @@ Accept 헤더 필드와 같이 품질지수에 의해서 상대적인 우선 순
 
 - "\*"(에스터리스크)를 지정하면 와일드 카드로서 모든 인코딩 포맷을 가리킴
 
+<br>
+
 ### 6.4.4 Accept-Language
 
 `Accept-Language: ko-kr, en-us;q=0.7, en;q=0.3`
@@ -428,6 +474,8 @@ Accept 헤더 필드와 같이 품질지수에 의해서 상대적인 우선 순
 
   - 없으면 → 영어 리소스로 response를 받고 싶다는 것을 의미
 
+<br>
+
 ### 6.4.5 Authorization
 
 - 유저 에이전트의 인증 정보(크리덴셜 값)을 전달하기 위해서 사용
@@ -437,6 +485,8 @@ Accept 헤더 필드와 같이 품질지수에 의해서 상대적인 우선 순
   - 상태 코드 401 response 뒤에 request에 Authorization 헤더 필드를 포함
 
 - 공유 캐시가 Authorization 헤더 필드를 포함하는 request를 받은 경우
+
+<br>
 
 ### 6.4.6 Expect
 
@@ -453,6 +503,8 @@ Accept 헤더 필드와 같이 품질지수에 의해서 상대적인 우선 순
 - 상태 코드 100 response를 가진 client
   - request할 때에 E`xpect : 100-continue`로 지정
 
+<br>
+
 ### 6.4.7 From
 
 `From: info@hackr.jp`
@@ -461,6 +513,8 @@ Accept 헤더 필드와 같이 품질지수에 의해서 상대적인 우선 순
 
 - 기본적으로 검색 엔진 등의 에이전트 책임자 이메일 에이전트 사용  
   → From 헤더 필드를 포함해야 함
+
+<br>
 
 ### 6.4.8 Host
 
@@ -476,6 +530,8 @@ Accept 헤더 필드와 같이 품질지수에 의해서 상대적인 우선 순
 
   - Host 헤더 필드에 리퀘스트를 받을 호스트명을 명확하게 한다.  
     `Host: `
+
+<br>
 
 ### 6.4.9 If-Match
 
@@ -494,6 +550,8 @@ Accept 헤더 필드와 같이 품질지수에 의해서 상대적인 우선 순
 - If-Match 필드 값에 "\*"를 지정할 수도 있다.
   - 이러한 경우 Etag 값과 상관없이 리소스가 존재한다면 리퀘스트를 처리한다.
 
+<br>
+
 ### 6.4.10 If-Modified-Since
 
 `If-Modified-Since: Thu, 15 Apr 2004 00:00:00 GMT`
@@ -504,6 +562,8 @@ Accept 헤더 필드와 같이 품질지수에 의해서 상대적인 우선 순
 - 필드 값에 지정된 날짜 이후, 지정한 리소스가 갱신되어 있지 않은 경우  
   -> 상태 코드 304 Not Modified 리스폰스를 반환
 
+<br>
+
 ### 6.4.11 If-None-Match
 
 - 조건부 리퀘스트의 하나로 If-Match와 반대로 동작한다.
@@ -511,12 +571,16 @@ Accept 헤더 필드와 같이 품질지수에 의해서 상대적인 우선 순
 - If-None-Match의 필드 값에 지정된 ETag 값이 지정된 리소스의 ETag값과 일치하지 않으면  
   -> 리퀘스트를 받아들이겠다는 뜻을 전달한다.
 
+<br>
+
 ### 6.4.12 If-Range
 
 - 조건부 리퀘스트의 하나로 If-Range로 지정한 필드값(ETag 값, 혹은 날짜를 지정)과 지정한 리소스의 ETag 값 혹은 날짜가 일치하면  
   -> Range 리퀘스트로서 처리하고 싶다는 것을 전달한다.
 
   - 일치하지 않는 경우 리소스 전체를 반환한다.
+
+<br>
 
 ### 6.4.13 If-Unmodified-Since
 
@@ -527,6 +591,8 @@ Accept 헤더 필드와 같이 품질지수에 의해서 상대적인 우선 순
 - 지정된 리소스가 필드 값에 지정된 날짜 이후에 갱신되어 있지 않는 경우에만  
   -> 리퀘스트를 받아들이도록 전달한다.
   - 지정된 날짜 이후에 갱신된 경우 상태 코드 412 Precondition Failed 리스폰스를 반환한다.
+
+<br>
 
 ### 6.4.14 Max-Forwards
 
@@ -541,6 +607,8 @@ Accept 헤더 필드와 같이 품질지수에 의해서 상대적인 우선 순
 - 프록시 서버 등 여러 대의 서버를 경우 하는 경우
   - 도중에 리퀘스트 전송 실패하게 되면 클라이언트에는 리스폰스가 되돌아 오지 않기 떄문에 알 수 없다.
 
+<br>
+
 ### 6.4.15 Proxy-Authorization
 
 `Proxy-Authorization: Basic dGlwOjkpNLAGfFY5`
@@ -552,6 +620,8 @@ Accept 헤더 필드와 같이 품질지수에 의해서 상대적인 우선 순
   - 클라이언트와 프록시 사이에 인증이 이루어진다.
 
   - 클라이언트 - 서버의 경우 Authorization 헤더 필드와 같은 역할을 한다.
+
+<br>
 
 ### 6.4.16 Range
 
@@ -566,6 +636,8 @@ Accept 헤더 필드와 같이 품질지수에 의해서 상대적인 우선 순
 - Range request를 처리할 수 없는 경우
   - 상태 코드 200 OK와 함께 전체 리소스 반환
 
+<br>
+
 ### 6.4.17 Refer
 
 - Refer를 보려면 Request 중의 URI가 어느 웹 페이지로부터 발행되었는지 알 수 있음
@@ -579,6 +651,8 @@ Accept 헤더 필드와 같이 품질지수에 의해서 상대적인 우선 순
   - Refer를 통해서 다른 서버에 노출될 우려가 존재함
 
 - Referrer가 맞지만 → 잘못된 철자로 사용 중
+
+<br>
 
 ### 6.4.18 TE
 
@@ -600,12 +674,16 @@ TE 헤더 필드 :
 
 > TE: trailers
 
+<br>
+
 ### 6.4.19 User-Agent
 
 - request를 생성한 브라우저와 유저 에이전트의 이름 등을 전달하기 위해 사용
 - 로봇 엔진의 request 경우에는 로봇 엔진의 책임자
 - 메일 주소가 부가된 것도 있음
 - 또는 프록시 경유로 리퀘스트의 경우에는 프록시 서버의 이름 등이 부가된 것도 있음
+
+<br>
 
 ## 6.5 리스폰스 헤더 필드
 
@@ -625,6 +703,8 @@ TE 헤더 필드 :
   - 수신 가능한 경우 -> bytes
   - 수신 불가능한 경우 -> none
 
+<br>
+
 ### 6.5.2 Age
 
 `Age: 600`
@@ -633,6 +713,8 @@ TE 헤더 필드 :
   - 리스폰스한 서버가 캐시 서버  
     -> 캐시된 리스폰스가 다시 실증되었던 때부터 검증한 시간
   - 리스폰스한 서버가 프록시 -> Age 헤더 필드 필수
+
+<br>
 
 ### 6.5.3 ETag
 
@@ -659,6 +741,8 @@ _강력한 ETag 값과 약한 ETag 값_
   - 값의 앞부분에 "W/"가 붙는다.  
     `ETag: W/"usagi-1234"`
 
+<br>
+
 ### 6.5.4 Location
 
 `Location: http://www.usagidesign.jp/sample.html`
@@ -669,6 +753,8 @@ _강력한 ETag 값과 약한 ETag 값_
 
 - 해당 필드를 포한한 리스폰스를 받으면 강제로 리다이렉트 하는 곳의 리소스에 액세스 시도
 
+<br>
+
 ### 6.5.5 Proxy-Authenticate
 
 `Proxy-Authenticate: Basic realm="Usagidesign Auth"`
@@ -677,6 +763,8 @@ _강력한 ETag 값과 약한 ETag 값_
 
 - 클라이언트와 프록시 사이에서 인증이 이루어진다.  
   -> HTTP 액세스 인증과의 차이점
+
+<br>
 
 ### 6.5.6 Retry-After
 
@@ -688,6 +776,8 @@ _강력한 ETag 값과 약한 ETag 값_
 
 - 값으로 *날짜*나 *리스폰스 이후의 몇 초*를 지정할 수 있다.
 
+<br>
+
 ### 6.5.7 Server
 
 `Server: Apache/2.2.17(Unix)`
@@ -696,6 +786,8 @@ _강력한 ETag 값과 약한 ETag 값_
 
 - 소프트웨어의 명칭과 함께, 버전이나 옵션에 대해서도 기재하는 경우가 있다.
   `Sever: Apache/2.2.6 (Unix) PHP/5.2.5`
+
+<br>
 
 ### 6.5.8 Vary
 
@@ -706,6 +798,8 @@ _강력한 ETag 값과 약한 ETag 값_
 - 오리진 서버가 프록시 서버에 로컬 캐시를 사용하는 방법에 대한 지시를 전달한다.
 
 - 같은 리소스에 대한 리퀘스트라도 Vary에 지정되었던 헤더 필드가 다른 경우 오리진 서버로 부터 리소스를 취득할 필요가 있다.
+
+<br>
 
 ### 6.5.9 WWW-Authenticate
 
@@ -718,6 +812,8 @@ _강력한 ETag 값과 약한 ETag 값_
 - 401 Unauthorized 리스폰스에 반드시 포함된다.
 
 - "realm"는 Request-URI에 지정된 리소스를 식별하기 위한 문자열이다.
+
+<br>
 
 ## 6.6 엔티티 헤더 필드
 
@@ -734,6 +830,8 @@ _강력한 ETag 값과 약한 ETag 값_
 - 서버가 받을 수 없는 메소드를 수신한 경우  
   -> 405 Method Not Allowed 리스폰스와 함께 수신 가능한 메소드 일람을 기술한 Allow 헤더 필드 반환
 
+<br>
+
 ### 6.5.2 Content-Encoding
 
 `Content-Encoding: gzip`
@@ -746,11 +844,15 @@ _강력한 ETag 값과 약한 ETag 값_
   - Deflate
   - Identity
 
+<br>
+
 ### 6.5.3 Content-Language
 
 `Content-Language: en`
 
 - 엔티티 바디에 사용된 자연어를 전달
+
+<br>
 
 ### 6.6.4 Content-Length
 
@@ -760,6 +862,8 @@ _강력한 ETag 값과 약한 ETag 값_
 
 - 엔티티 바디에 전송 코딩이 실시된 경우 헤당 헤더 필드를 사용하면 안된다.
 
+<br>
+
 ### 6.6.5 Content-Location
 
 `Content-Location: http://www.hackr.jp/index-ja.html`
@@ -768,6 +872,8 @@ _강력한 ETag 값과 약한 ETag 값_
 
 - 메시지 바디로 반환된 리소스의 URI를 나타낸다.
   - Location 헤더 필드와의 차이점
+
+<br>
 
 ### 6.6.6 Content-MD5
 
@@ -781,6 +887,8 @@ _강력한 ETag 값과 약한 ETag 값_
 
 - 유효성을 확인하기 위해서 수신한 클라이언트 측 메시지 바디에 같은 MD5 알고리즘 실행
 
+<br>
+
 ### 6.6.7 Content-Range
 
 `Content-Range: bytes 5001-10000/10000`
@@ -790,6 +898,8 @@ _강력한 ETag 값과 약한 ETag 값_
 - 리스폰스로 보낸 엔티티가 어느 부분에 해당하는 가를 전달한다.
 
 - 필드 값에는 현재 보내고 있는 곳을 바이트로 지정한 범위와 전체 사이즈를 기록한다.
+
+<br>
 
 ### 6.6.8 Content-Type
 
@@ -803,6 +913,8 @@ _강력한 ETag 값과 약한 ETag 값_
   - iso-8859-1
   - euc-kr
 
+<br>
+
 ### 6.6.9 Expires
 
 `Expires: Wed, 04 Jul 2012 08:26:05 GMT`
@@ -812,6 +924,8 @@ _강력한 ETag 값과 약한 ETag 값_
 - 캐시 서버가 해당 헤더 필드를 포함한 리소스 수신한 경우  
   -> 필드 값으로 지정된 날짜까지 리스폰스의 복사본을 유지하고 리퀘스트에는 캐시로 응답한다.
 
+<br>
+
 ### 6.6.10 Last-Modified
 
 `Last-Modified: Wed, 23 May 2012 09:59:55 GMT`
@@ -820,6 +934,8 @@ _강력한 ETag 값과 약한 ETag 값_
 
 - Request-URI가 지정된 리소스가 갱신되었던 날짜가 된다.
   - CGI 등의 동적인 데이터를 다룰 경우 그 데이터의 최종 갱신 날짜가 되는 경우도 있다.
+
+<br>
 
 ## 6.7 쿠키를 위한 헤더 필드
 
@@ -860,6 +976,8 @@ _강력한 ETag 값과 약한 ETag 값_
   |  Set-Cookie  | 상태 관리 개시를 위한 쿠키 정보 | 리스폰스  |
   |    Cookie    |    서버에서 수신한 쿠키 정보    | 리퀘스트  |
 
+<br>
+
 ### 6.7.1 Set-Cookie
 
 ```
@@ -877,6 +995,8 @@ Set-Cookie: satus-enable; expires=Tue, 05 Jul 2011 07:26:31 GMT;=>path=/;domain=
   |      Secure      |                       HTTPS로 통신하고 있는 경우에만 쿠키를 송신                        |
   |     HttpOnly     |                     쿠키를 JavaScript에서 액세스하지 못하도록 제한                      |
 
+<br>
+
 ### 6.7.2 Cookie
 
 `Cookie: status=enable`
@@ -884,6 +1004,8 @@ Set-Cookie: satus-enable; expires=Tue, 05 Jul 2011 07:26:31 GMT;=>path=/;domain=
 - Cookie 헤더 필드는 클라이언트가 HTTP의 상태 관리 지원을 원할 때 서버로부터 수신한 쿠키를 이후의 리퀘스트에 포함해서 전달한다.
 
 - 쿠키를 여러 개 수신하고 있을 때에는 쿠키를 여러 개 보내는 것도 가능하다.
+
+<br>
 
 ## 그 이외의 헤더 필드
 
@@ -919,6 +1041,8 @@ Set-Cookie: satus-enable; expires=Tue, 05 Jul 2011 07:26:31 GMT;=>path=/;domain=
 <IfModule>
 ```
 
+<br>
+
 ### 6.8.2 X-XSS-Protection
 
 `X-XSS-Protection: 1`
@@ -930,6 +1054,8 @@ Set-Cookie: satus-enable; expires=Tue, 05 Jul 2011 07:26:31 GMT;=>path=/;domain=
   - 0: XSS 필터를 무효로 한다.
 
   - 1: XSS 필터를 유효로 한다.
+
+<br>
 
 ### 6.8.3 DNT
 
@@ -946,6 +1072,8 @@ Set-Cookie: satus-enable; expires=Tue, 05 Jul 2011 07:26:31 GMT;=>path=/;domain=
   - 1: 트래킹 거부
 
 - DNT 헤더 필드의 기능이 유효성을 유지하기 위해서는 웹 서버에서 DNT를 지원할 필요가 있다.
+
+<br>
 
 ### 6.8.4 P3P
 
