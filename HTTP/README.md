@@ -18,7 +18,7 @@
 
 7. [웹을 안정하게 하는 HTTPS](./Chapter7_HTTPS/README.md)
 
-8. 누가 액세스하고 있는지를 확인하는 인증
+8. [누가 액세스하고 있는지를 확인하는 인증](./Chapter8_Wireless_LAN/README.md)
 
 9. HTTP에 기능을 추가한 프로토콜
 
