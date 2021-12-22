@@ -20,7 +20,7 @@
 
 8. [누가 액세스하고 있는지를 확인하는 인증](./Chapter8_Wireless_LAN/README.md)
 
-9. HTTP에 기능을 추가한 프로토콜
+9. [HTTP에 기능을 추가한 프로토콜](Chapter9_Wireless_LAN//README.md)
 
 10. 웹 콘텐츠에서 사용하는 기술
 
